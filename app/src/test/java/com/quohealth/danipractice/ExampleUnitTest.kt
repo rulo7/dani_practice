@@ -40,5 +40,50 @@ class ExampleUnitTest {
 
         assertTrue(true)
     }
+
+    @Test
+    fun test() {
+        val items = mutableListOf(1, 2, 3, 4, 10)
+        for(i in items){
+            println(i)
+        }
+        assertTrue(true)
+    }
+
+    @Test
+    fun test2() {
+        /*for (i in 1..7) {
+            println(i)
+        }
+        for (i in 6 downTo 0 step 2) {
+            println(i)
+        }*/
+        val array = arrayOf("a", "b", "c")
+        for (i in array.indices) {
+            println(array[i])
+        }
+
+        for ((index, value) in array.withIndex()) {
+            println("the element at $index is $value")
+        }
+
+        assertTrue(true)
+    }
+
+    @Test
+    fun test3() {
+        class Customer(name: String) {
+            //val customerKey = name.toUpperCase()
+            val customerKey = "123"
+            val numero = 1
+            init {
+                println("$numero")
+            }
+        }
+        Customer("Dani")
+
+        assertTrue(true)
+    }
+
 }
 
