@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Dani practice</string>
+    <string name="name">name</string>
+    <string name="role">role</string>
 </resources>
