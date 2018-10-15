@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.text.Editable
 import android.view.View
 import com.quohealth.danipractice.R
 import com.quohealth.danipractice.domain.display
@@ -12,6 +13,7 @@ import kotlinx.android.synthetic.main.activity_splash.*
 
 class SplashActivity : AppCompatActivity() {
 
+    //val interactor = factory.interactor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,6 +25,8 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun start() {
-
+        /*interactor.retrieveWorkers {workers->
+            workers[0].
+        }*/
     }
 }

@@ -17,6 +17,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".presentation.HomeActivity" />
+        <activity android:name=".presentation.ListUsersActivity" />
+        <activity android:name=".presentation.AddUsersActivity" />
+        <activity android:name=".presentation.UserDetailActivity" />
     </application>
 
 </manifest>
