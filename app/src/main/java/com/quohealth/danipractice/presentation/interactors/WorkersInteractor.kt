@@ -8,6 +8,11 @@ import kotlin.concurrent.thread
 class WorkersInteractor(private val responseHandler: Handler,
                         private val provider: Provider) {
 
+
+    fun retrieveWorkers(onRetrievedListListener: OnRetrievedListListener) {
+
+    }
+
     fun retrieveWorkers(response: (List<Worker>) -> Unit) {
         thread {
             val users = provider.provideWorkers()
@@ -34,4 +39,9 @@ class WorkersInteractor(private val responseHandler: Handler,
             }
         }
     }
+}
+
+
+interface OnRetrievedListListener {
+    fun onSuccess(workers: List<Worker>)
 }

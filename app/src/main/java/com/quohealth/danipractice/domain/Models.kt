@@ -16,3 +16,11 @@ fun Worker.display(
         context: Context) = "${context.getString(R.string.name).capitalize()}: $name\n${context.getString(R.string.role).capitalize()}: $role"
 
 fun Collection<Worker>.display(context: Context) = map { it.display(context) }.reduce { acc, text -> "$acc\n$text" }
+
+fun Context.dp(value: Int): Int = value * resources.displayMetrics.density.toInt()
+fun Context.dp(value: Float): Int = value.toInt() * resources.displayMetrics.density.toInt()
+fun Context.dp(value: Double): Int = value.toInt() * resources.displayMetrics.density.toInt()
+
+fun Context.sp(value: Int): Int = value * resources.displayMetrics.scaledDensity.toInt()
+fun Context.sp(value: Float): Int = value.toInt() * resources.displayMetrics.scaledDensity.toInt()
+fun Context.sp(value: Double): Int = value.toInt() * resources.displayMetrics.scaledDensity.toInt()
