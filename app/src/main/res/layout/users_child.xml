@@ -37,5 +37,16 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/trashButton"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:padding="6dp"
+        android:src="@android:drawable/ic_delete"
+        android:visibility="gone"
+        tools:visibility="visible" />
 
 </LinearLayout>
