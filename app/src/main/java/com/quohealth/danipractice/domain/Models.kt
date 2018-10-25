@@ -24,3 +24,5 @@ fun Context.dp(value: Double): Int = value.toInt() * resources.displayMetrics.de
 fun Context.sp(value: Int): Int = value * resources.displayMetrics.scaledDensity.toInt()
 fun Context.sp(value: Float): Int = value.toInt() * resources.displayMetrics.scaledDensity.toInt()
 fun Context.sp(value: Double): Int = value.toInt() * resources.displayMetrics.scaledDensity.toInt()
+
+fun <T> List<T>.toArrayList() = arrayListOf<T>().also { arrayList -> arrayList.addAll(this) }
