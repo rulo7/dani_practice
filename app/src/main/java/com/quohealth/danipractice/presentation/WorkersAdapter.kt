@@ -10,8 +10,8 @@ import com.quohealth.danipractice.domain.dp
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.users_child.view.*
 
-class UserAdapter(private val items: List<Worker>,
-                  private val onRemoveListener: ((Int, Worker) -> Unit)? = null) : RecyclerView.Adapter<UserAdapter.UserViewHolder>() {
+class WorkersAdapter(val items: ArrayList<Worker>,
+                     private val onRemoveListener: ((Int, Worker) -> Unit)? = null) : RecyclerView.Adapter<WorkersAdapter.UserViewHolder>() {
 
     override fun getItemCount(): Int {
         return items.size
@@ -28,9 +28,9 @@ class UserAdapter(private val items: List<Worker>,
             if (onRemoveListener != null) {
                 //1. render trash
                 trashButton.visibility = View.VISIBLE
-                /*removeTrash.setOnClickListener = {
-                    onRemoveListener(position,element)
-                }*/
+                trashButton.setOnClickListener {
+                    onRemoveListener.invoke(position, element)
+                }
             } else {
                 trashButton.visibility = View.GONE
             }

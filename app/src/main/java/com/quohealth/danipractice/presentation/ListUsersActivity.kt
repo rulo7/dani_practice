@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ProgressBar
 import com.quohealth.danipractice.R
 import com.quohealth.danipractice.domain.factory
+import com.quohealth.danipractice.domain.toArrayList
 import kotlinx.android.synthetic.main.activity_list_users.*
 
 class ListUsersActivity : AppCompatActivity() {
@@ -30,8 +31,8 @@ class ListUsersActivity : AppCompatActivity() {
         progressBar.visibility = View.VISIBLE
         interactor.retrieveWorkers { workers ->
             progressBar.visibility = View.GONE
-            //users_list.adapter = UserAdapter(workers, this)
-            users_list.adapter = UserAdapter(workers)
+            //users_list.adapter = WorkersAdapter(workers, this)
+            users_list.adapter = WorkersAdapter(workers.toArrayList())
         }
 
     }

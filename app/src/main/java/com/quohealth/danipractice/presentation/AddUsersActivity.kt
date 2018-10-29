@@ -5,11 +5,15 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.TextView
 import android.widget.Toast
 import com.quohealth.danipractice.R
 import com.quohealth.danipractice.domain.Worker
 import com.quohealth.danipractice.domain.factory
 import kotlinx.android.synthetic.main.activity_add_users.*
+
 
 class AddUsersActivity : AppCompatActivity() {
 
@@ -17,7 +21,9 @@ class AddUsersActivity : AppCompatActivity() {
     private val interactor = factory.interactor
     private lateinit var workersAdapter: WorkersAdapter
 
-    private var list_of_items = arrayOf("CEO", "CTO", "Android Dev.", "iOS Dev.", "Front-End Dev.", "Design")
+    private var role_msg: TextView? = null
+    private var list_of_roles = arrayOf("CEO", "CTO", "Android Dev.", "iOS Dev.", "Front-End Dev.", "Design", "Social")
+    private var userSelectedIndex = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,28 +39,34 @@ class AddUsersActivity : AppCompatActivity() {
 
 
         /*Spinner*/
-        //spinner_role!!.setOnItemSelectedListener(this)
+        //Asociamos la lista de roles con el spinner
+        val arrayAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, list_of_roles)
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        spinner_role!!.adapter = arrayAdapter
 
-        // Create an ArrayAdapter using a simple spinner layout and languages array
-        //val aa = ArrayAdapter(this, android.R.layout.simple_spinner_item, list_of_items)
-        // Set layout to use when the list of choices appear
-        //aa.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        // Set Adapter to Spinner
-        //spinner_role!!.setAdapter(aa)
+        //Cogemos el item seleccionado
+        spinner_role.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+
+                userSelectedIndex = position
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {}
+        }
         /*Fin Spinner*/
-
 
 
         saveNewBtn.setOnClickListener {
             val workerId = input_name.text.split(" ")
-            //val worker = Worker(workerId[0].toLowerCase(), input_name.text.toString(),input_role.text.toString())
-            val worker = Worker(workerId[0].toLowerCase(), input_name.text.toString(), "Role")
+
+            val worker = Worker(workerId[0].toLowerCase(), input_name.text.toString(), list_of_roles.get(userSelectedIndex))
             addWorker(worker)
         }
 
 
         retrieveWorkers()
     }
+
 
     private fun retrieveWorkers() {
         loading.visibility = View.VISIBLE

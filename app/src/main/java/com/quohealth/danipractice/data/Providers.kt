@@ -8,8 +8,8 @@ class Provider0 : Provider {
     companion object {
         private val workers = hashMapOf(
                 Worker("raul", "Raúl", "GOD", "https://www.quohealth.com/static/media/raul.0d508223.jpg").asHasheable(),
-                Worker("danijr", "Daniel Jr.", "Android padawan").asHasheable(),
-                Worker("alvaro", "Alvaro", "Guard of Raúl", "https://www.quohealth.com/static/media/raul.0d508223.jpg").asHasheable(),
+                Worker("danijr", "Daniel Jr.", "Android padawan", "https://www.quohealth.com/static/media/daniel.f9185410.jpg").asHasheable(),
+                Worker("alvaro", "Alvaro", "Guard of Raúl", "https://www.quohealth.com/static/media/alvaro.dd28b8e6.jpg").asHasheable(),
                 Worker("david", "David", "Guard of the guard", "https://www.quohealth.com/static/media/david.3cbff542.jpg").asHasheable(),
                 Worker("beatriz", "Beatriz", "Designer and condescending", "https://www.quohealth.com/static/media/bea.b428952e.jpg").asHasheable(),
                 Worker("estefania", "Estefanía", "Designer and Ness spy", "https://www.quohealth.com/static/media/estefi.b75bd369.jpg").asHasheable(),
