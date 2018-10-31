@@ -20,10 +20,10 @@
         </activity>
         <activity android:name=".presentation.HomeActivity" />
         <activity android:name=".presentation.ListUsersActivity" />
+        <activity android:name=".presentation.DetailsUserActivity" />
         <activity
             android:name=".presentation.AddUsersActivity"
             android:windowSoftInputMode="adjustPan" />
-        <activity android:name=".presentation.UserDetailActivity" />
     </application>
     <uses-permission android:name="android.permission.INTERNET" />
 

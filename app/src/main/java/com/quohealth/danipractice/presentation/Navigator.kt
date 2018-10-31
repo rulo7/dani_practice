@@ -18,7 +18,7 @@ class Navigator {
         }
 
         fun goToDetailsUserActivity(context: Context){
-            context.startActivity(Intent(context, AddUsersActivity::class.java))
+            context.startActivity(Intent(context, DetailsUserActivity::class.java))
         }
 
     }
